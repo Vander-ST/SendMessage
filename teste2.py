@@ -1,0 +1,3 @@
+import selenium
+
+messenger = Whatsapp()
