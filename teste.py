@@ -23,22 +23,16 @@ element1.send_keys(message)
 #APERTAR O BOTÃO ENTER PARA ENVIAR A MENSAGEM
 element1.send_keys(Keys.ENTER)
 
-
+#ENTRANDO NO LOOPING INFINITO POIS N SERÁ SEMPRE IGUAL A 1
 while n == 1:
-    for i in contatos:
-        print(i)
-        element2 = driver.find_element_by_xpath('//*[@id="tsf"]/div[1]/div[1]/div[2]/div/div[2]/input')
-        element2.click()
-        element2.send_keys(Keys.CONTROL,'a')
-        element2.send_keys(Keys.DELETE)
-        element2.send_keys(i)
-        element2.send_keys(Keys.ENTER)
-        time.sleep(10)
-    print(x)
-    x = x + 1
-
-
-
-#973031263
-#983435229
-#998523733
+    for i in contatos: #LOOP PARA PERCORRER LISTA DE CONTATOS
+        print(i) #MOSTRAR CONTATO
+        element2 = driver.find_element_by_xpath('//*[@id="tsf"]/div[1]/div[1]/div[2]/div/div[2]/input') #ATRIBUIR E ACHAR LOCAL A CLICAR
+        element2.click()   #CLICAR NO LOCAL MENCIONADO ACIMA
+        element2.send_keys(Keys.CONTROL,'a')    #APERTAR TECLAS PARA SELECIONAR TUDO O QUE ESTIVER ESCRITO
+        element2.send_keys(Keys.DELETE)     #APERTAR TECLA DELETE PARA EXCLUIR O QUE ESTIVER ESCRITO
+        element2.send_keys(i)           #ESCREVER O NOME DO CONTATO NO LOCAL
+        element2.send_keys(Keys.ENTER)  #APERTAR ENTER PARA PESQUISAR
+        time.sleep(10)          #ESPERAR 10 SEGUNDOS PARA A PRÓXIMA AÇÃO
+    print(x)    #PRINTAR CONTAGEM
+    x = x + 1   #INCREMENTAR CONTAGEM
